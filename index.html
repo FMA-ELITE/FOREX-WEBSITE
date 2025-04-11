@@ -11,25 +11,58 @@
             --blue: #16213E;
             --green: #2ECC71;
         }
+        
+        /* Candlestick Background */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--dark);
             color: white;
             line-height: 1.6;
+            position: relative;
+            background-color: var(--dark);
         }
+        
+        body::before {
+            content: "";
+            background-image: url('https://www.tradingview.com/x/5ZkL8QYV/');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.15;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
         header {
             background: linear-gradient(135deg, var(--blue), #0F3460);
             padding: 30px 20px;
             text-align: center;
             border-bottom: 3px solid var(--gold);
+            position: relative;
         }
+
+        /* Logo Positioning */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 60px;
+            width: auto;
+            z-index: 100;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
+
         .btn {
             display: inline-block;
             background: var(--gold);
@@ -53,13 +86,14 @@
             margin: 40px 0;
         }
         .pricing-box {
-            background: rgba(26, 26, 46, 0.8);
+            background: rgba(26, 26, 46, 0.9);
             border: 1px solid var(--gold);
             border-radius: 10px;
             padding: 25px;
             width: 220px;
             position: relative;
             transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
         }
         .pricing-box:hover {
             transform: translateY(-10px);
@@ -91,17 +125,26 @@
             padding: 20px;
             text-align: center;
             margin-top: 40px;
+            backdrop-filter: blur(2px);
         }
         @media (max-width: 768px) {
             .pricing-table {
                 flex-direction: column;
                 align-items: center;
             }
+            .logo {
+                position: static;
+                display: block;
+                margin: 0 auto 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <!-- Add your logo here - https://ibb.co/fGq1cGTj -->
+        <img src="https://via.placeholder.com/150x60?text=YOUR+LOGO" alt="Forex Signals Logo" class="logo">
+        
         <div class="container">
             <h1>VIP FOREX SIGNALS UGANDA</h1>
             <p>Professional Trading Signals | 90% Accuracy Rate</p>
@@ -167,7 +210,7 @@
     </section>
 
     <section id="book">
-        <div class="container" style="text-align: center; background: rgba(22, 33, 62, 0.5); padding: 30px; border-radius: 10px;">
+        <div class="container" style="text-align: center; background: rgba(22, 33, 62, 0.7); padding: 30px; border-radius: 10px; backdrop-filter: blur(2px);">
             <h2>MASTER FOREX TRADING</h2>
             <p style="max-width: 600px; margin: 0 auto 20px;">Get my 150-page eBook with proven strategies for consistent profits</p>
             <a href="https://store.pesapal.com/shop/0ovdyr-forexmasteryacademyfma?productCode=e32a22ea-0321-4842-b24a-a6d68b736dd2" class="btn" style="background: var(--green);">BUY EBOOK (20,000 UGX)</a>
